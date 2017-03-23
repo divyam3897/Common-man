@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-
+import { IonicService } from '../../providers/ionic-service';
 import { NavController } from 'ionic-angular';
+import { Page2 } from '../page2/page2';
 
 @Component({
   selector: 'page-page1',
@@ -9,19 +10,37 @@ import { NavController } from 'ionic-angular';
 export class Page1 {
   data:any;
 
-  constructor(public navCtrl: NavController) {
-    this.data = [ {
-image: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Culinary_fruits_front_view.jpg',
-name: 'Fruits'
-    },
-    {
-    image: 'http://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/articles/health_tools/12_powerhouse_vegetables_slideshow/intro_cream_of_crop.jpg',
-    name: 'Vegetables'
-    }
-    ]
-
-
+  constructor(public navCtrl: NavController, public ionicService: IonicService) {
     
+    this.getData ();
+    
+//     [ {
+// image: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Culinary_fruits_front_view.jpg',
+// name: 'Fruits'
+//     },
+//     {
+//     image: 'http://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/articles/health_tools/12_powerhouse_vegetables_slideshow/intro_cream_of_crop.jpg',
+//     name: 'Vegetables'
+//     }
+//     ]
+  }
+
+  private getData ()
+  {
+    this.ionicService.getCatImages().subscribe (
+      data => {
+        this.data = data;
+        console.log ((this.data));
+      },
+      err => {
+        console.log(err);
+      },
+    ); 
+  }
+
+  itemTapped(item)
+  {
+    this.navCtrl.push(Page2, item);
   }
 
 }

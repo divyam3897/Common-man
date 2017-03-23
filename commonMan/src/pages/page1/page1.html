@@ -8,11 +8,11 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let item of data">
-    <img src= {{item.image}}>
+  <ion-card *ngFor="let item of data" (click)="itemTapped(item)">
+    <img src= {{item.Image}}>
   <ion-card-content>
     <ion-card-title>
-      {{ item.name }}
+      {{ item.Name }}
       </ion-card-title>
   </ion-card-content>
 </ion-card>
