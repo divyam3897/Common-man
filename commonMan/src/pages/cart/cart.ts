@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { CartService } from '../../providers/cart-service';
 
 /*
   Generated class for the Cart page.
@@ -13,10 +14,14 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class CartPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public cartService: CartService) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartPage');
+  }
+
+  paymentProcess (){
+    console.log ("Payment obj");
   }
 
 }

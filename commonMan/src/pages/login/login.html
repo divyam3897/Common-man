@@ -16,15 +16,16 @@
 
 
 <ion-content padding>
+  
     <ion-item>
     <ion-label floating>Username/Email</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="userCredential"></ion-input>
   </ion-item>
     <ion-item>
     <ion-label floating>Password</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="password"></ion-input>
     </ion-item><br>
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color:black;">
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color:black;" (click)="authenticateUser()">
   Login
 </button>
 <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color:black" (click)="registerUser()">

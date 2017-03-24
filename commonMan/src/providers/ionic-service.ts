@@ -30,7 +30,8 @@ export class IonicService {
     let headers = new Headers();
     headers.append('x-apikey', '58d44c5a81f530cf439b30af');
     var url = 'https://test-72ec.restdb.io/rest/items';
-    var response = this.authHttp.get(url, { headers: headers }).map(res => res.json());
+    console.log("fethcing");
+    var response = this.http.get(url, { headers: headers }).map(res => res.json());
     return response;
   
   }
@@ -40,7 +41,7 @@ export class IonicService {
     let headers = new Headers();
     headers.append('x-apikey', '58d4512b81f530cf439b30b1');
     var url = 'https://test-72ec.restdb.io/rest/categories';
-    var response = this.authHttp.get(url, { headers: headers }).map(res => res.json());
+    var response = this.http.get(url, { headers: headers }).map(res => res.json());
     return response;
   
   }

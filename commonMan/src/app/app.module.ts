@@ -7,6 +7,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { IonicService } from '../providers/ionic-service';
 import { UserService } from '../providers/user';
+import { CartService } from '../providers/cart-service'
 import { AuthConfig, AuthHttp } from 'angular2-jwt';
 import { AuthService } from '../providers/auth-service';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -52,13 +53,14 @@ export function getAuthHttp(http) {
     SplashScreen,
     IonicService,
     UserService,
+    CartService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthService,
-    {
-      provide: AuthHttp,
-      useFactory: getAuthHttp,
-      deps: [Http]
-    }
+    //AuthService,
+    // {
+    //   provide: AuthHttp,
+    //   useFactory: getAuthHttp,
+    //   deps: [Http]
+    // }
     
   ]
 })

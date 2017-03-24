@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { CartService } from '../../providers/cart-service';
 import { IonicService } from '../../providers/ionic-service';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -12,7 +12,7 @@ export class Page2 {
   icons: string[];
   items: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public ionicService: IonicService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public ionicService: IonicService,public cartService: CartService ) {
     // If we navigated to this page, we will have an item available as a nav param
 
     this.selectedItem = navParams.get('Name');
@@ -33,6 +33,10 @@ export class Page2 {
     // }
     
   }
+
+  placeOrder (item) {
+    this.cartService.placeItemInCart (item);
+  };
 
   private getData ()
   {
