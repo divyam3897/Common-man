@@ -2,16 +2,20 @@ import { Component } from '@angular/core';
 import { IonicService } from '../../providers/ionic-service';
 import { NavController } from 'ionic-angular';
 import { Page2 } from '../page2/page2';
+import { SearchPage } from '../search/search';
+import { LoadingController,Loading } from 'ionic-angular';
 
 @Component({
   selector: 'page-page1',
   templateUrl: 'page1.html'
 })
 export class Page1 {
+  loading: Loading;
   data:any;
 
-  constructor(public navCtrl: NavController, public ionicService: IonicService) {
+  constructor(public navCtrl: NavController, public ionicService: IonicService, public loadingCtrl: LoadingController) {
     
+    this.presentLoading();
     this.getData ();
     
 //     [ {
@@ -24,15 +28,23 @@ export class Page1 {
 //     }
 //     ]
   }
+ presentLoading() {
+    this.loading = this.loadingCtrl.create({
+      content: 'Please wait...',
+    });
+    this.loading.present();
+}
 
   private getData ()
   {
     this.ionicService.getCatImages().subscribe (
       data => {
         this.data = data;
+        this.loading.dismiss();
       },
       err => {
         console.log(err);
+        this.loading.dismiss();
       },
     ); 
   }
@@ -40,6 +52,12 @@ export class Page1 {
   itemTapped(item)
   {
     this.navCtrl.push(Page2, item);
+  }
+
+  searchTapped()
+  {
+    console.log('hey');
+    this.navCtrl.push(SearchPage);
   }
 
 }

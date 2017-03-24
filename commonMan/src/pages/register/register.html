@@ -7,12 +7,41 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>register</ion-title>
+    <ion-title>Register</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+	<form [formGroup]="myForm">
+	<ion-item>
+	    <ion-label floating>Full Name</ion-label>
+	    <ion-input formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+	    <ion-label floating>Username</ion-label>
+	    <ion-input formControlName="username"></ion-input>
+    </ion-item>
+    <ion-item>
+	    <ion-label floating>Password</ion-label>
+	    <ion-input formControlName="password" type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+	    <ion-label floating>Email</ion-label>
+	    <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+	    <ion-label floating>Contact No.</ion-label>
+	    <ion-input formControlName="contact" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+	    <ion-label floating>Address</ion-label>
+	    <ion-input formControlName="address"></ion-input>
+    </ion-item>
+    <br>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color:black;">
+  Register
+</button>
+</form>
 </ion-content>
