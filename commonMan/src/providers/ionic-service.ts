@@ -3,6 +3,8 @@ import { Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 
+import {AuthHttp} from 'angular2-jwt';
+// import {AuthService} from '../../providers/auth-service';
 
 /*
   Generated class for the IonicService provider.
@@ -13,7 +15,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class IonicService {
 
-  constructor(public http: Http) {
+  constructor(public http: Http, private authHttp: AuthHttp) {
   }
 
   createAuthorizationHeader(headers: Headers) {
@@ -28,7 +30,7 @@ export class IonicService {
     let headers = new Headers();
     headers.append('x-apikey', '58d44c5a81f530cf439b30af');
     var url = 'https://test-72ec.restdb.io/rest/items';
-    var response = this.http.get(url, { headers: headers }).map(res => res.json());
+    var response = this.authHttp.get(url, { headers: headers }).map(res => res.json());
     return response;
   
   }
@@ -38,7 +40,7 @@ export class IonicService {
     let headers = new Headers();
     headers.append('x-apikey', '58d4512b81f530cf439b30b1');
     var url = 'https://test-72ec.restdb.io/rest/categories';
-    var response = this.http.get(url, { headers: headers }).map(res => res.json());
+    var response = this.authHttp.get(url, { headers: headers }).map(res => res.json());
     return response;
   
   }
