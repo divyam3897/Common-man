@@ -13,6 +13,8 @@ import { RegisterPage } from '../register/register';
   templateUrl: 'login.html'
 })
 export class LoginPage {
+  username : string;
+  password : string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
@@ -22,6 +24,10 @@ export class LoginPage {
 
   registerUser() {
   this.navCtrl.push(RegisterPage);
+  }
+
+  login() {
+    
   }
 
 }

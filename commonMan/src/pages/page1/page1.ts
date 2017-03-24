@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicService } from '../../providers/ionic-service';
 import { NavController } from 'ionic-angular';
 import { Page2 } from '../page2/page2';
+import { SearchPage } from '../search/search';
 
 @Component({
   selector: 'page-page1',
@@ -40,6 +41,12 @@ export class Page1 {
   itemTapped(item)
   {
     this.navCtrl.push(Page2, item);
+  }
+
+  searchTapped()
+  {
+    console.log('hey');
+    this.navCtrl.push(SearchPage);
   }
 
 }
