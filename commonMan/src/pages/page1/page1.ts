@@ -30,7 +30,6 @@ export class Page1 {
     this.ionicService.getCatImages().subscribe (
       data => {
         this.data = data;
-        console.log ((this.data));
       },
       err => {
         console.log(err);
@@ -41,7 +40,6 @@ export class Page1 {
   itemTapped(item)
   {
     this.navCtrl.push(Page2, item);
-    console.log("hell",item)
   }
 
 }

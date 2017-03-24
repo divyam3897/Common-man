@@ -14,8 +14,9 @@ export class Page2 {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public ionicService: IonicService) {
     // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = this.navParams.get('item');
-    //console.log(JSON.stringify(this.selectedItem))
+
+    this.selectedItem = navParams.get('Name');
+    
 
     // // Let's populate this page with some filler content for funzies
     // this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
@@ -30,6 +31,7 @@ export class Page2 {
     //     icon: this.icons[Math.floor(Math.random() * this.icons.length)]
     //   });
     // }
+    
   }
 
   private getData ()
@@ -37,7 +39,7 @@ export class Page2 {
     this.ionicService.getItemImages().subscribe (
       data => {
         this.items = data;
-        console.log ((this.items));
+
       },
       err => {
         console.log(err);

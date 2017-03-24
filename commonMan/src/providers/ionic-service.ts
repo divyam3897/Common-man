@@ -14,7 +14,6 @@ import 'rxjs/add/operator/map';
 export class IonicService {
 
   constructor(public http: Http) {
-    console.log('Hello IonicService Provider');
   }
 
   createAuthorizationHeader(headers: Headers) {
