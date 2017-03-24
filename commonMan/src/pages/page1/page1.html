@@ -15,13 +15,35 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let item of data" (click)="itemTapped(item)">
-    <img src= {{item.Image}}>
-  <ion-card-content>
-    <ion-card-title>
-      {{ item.Name }}
-      </ion-card-title>
-  </ion-card-content>
-</ion-card>
+  <ion-slides style="width: 100%; height: 40%;">
+ 
+    <ion-slide >
+      <img src="http://www.ayyaantuu.net/wp-content/uploads/2015/10/63-e1445886048707-1.png" style="height:30%;width:80%; left: 10%;  object-fit: cover;">
+    </ion-slide>
+ 
+    <ion-slide >
+      <img src="http://www.amul.com/files/products/promotion/pro_amul_slim_trim_milk.jpg" style="height:30%;width:80%; left: 10%; object-fit: cover;">
+    </ion-slide>
+ 
+    <ion-slide>
+      <img src="https://staticdelivery.nexusmods.com/mods/110/images/74627-0-1459502036.jpg" style="height:30%;width:80%; left: 10%; object-fit: cover;">
+    </ion-slide>
 
+  </ion-slides>
+ 
+ 
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of data" width-50 >
+        <ion-card (click)="itemTapped(item)">
+          <img src= {{item.Image}}>
+          <ion-card-content>
+            <ion-card-title>
+              {{item.Name}}
+            </ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
