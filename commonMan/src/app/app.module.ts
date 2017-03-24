@@ -6,6 +6,7 @@ import { Page2 } from '../pages/page2/page2';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { IonicService } from '../providers/ionic-service';
+import { UserService } from '../providers/user';
 import { AuthConfig, AuthHttp } from 'angular2-jwt';
 import { AuthService } from '../providers/auth-service';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -48,6 +49,7 @@ export function getAuthHttp(http) {
     StatusBar,
     SplashScreen,
     IonicService,
+    UserService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
     {
