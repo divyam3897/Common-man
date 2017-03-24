@@ -20,7 +20,7 @@ export class IonicService {
     headers.append('Accept', 'application/json');
     headers.append('Content-Type', 'application/json');
   
-    headers.append('x-apikey', '58d44c5a81f530cf439b30af');
+    //headers.append('x-apikey', '58d44c5a81f530cf439b30af');
   }
   
   getItemImages()
