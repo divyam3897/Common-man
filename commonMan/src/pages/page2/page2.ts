@@ -2,19 +2,22 @@ import { Component } from '@angular/core';
 
 import { IonicService } from '../../providers/ionic-service';
 import { NavController, NavParams, AlertController} from 'ionic-angular';
+import { LoadingController,Loading } from 'ionic-angular';
 
 @Component({
   selector: 'page-page2',
   templateUrl: 'page2.html'
 })
 export class Page2 {
+  loading: Loading;
   selectedItem: any;
   icons: string[];
   items: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public ionicService: IonicService,public alerCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public ionicService: IonicService,public alerCtrl: AlertController,public loadingCtrl: LoadingController) {
     // If we navigated to this page, we will have an item available as a nav param
 
+    this.presentLoading();
     this.selectedItem = navParams.get('Name');
     
 
@@ -34,15 +37,24 @@ export class Page2 {
     
   }
 
+
+  presentLoading() {
+    this.loading = this.loadingCtrl.create({
+      content: 'Please wait...',
+    });
+    this.loading.present();
+}
   private getData ()
   {
     this.ionicService.getItemImages().subscribe (
       data => {
         this.items = data;
+        this.loading.dismiss();
 
       },
       err => {
         console.log(err);
+        this.loading.dismiss();
       },
     ); 
   }
