@@ -1,29 +1,36 @@
 <ion-header>
+  
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Profile</ion-title>
+    
   </ion-navbar>
 </ion-header>
 
-<ion-content padding >
+<!--<ion-content padding *ngIf="!isLoggedIn">
   
-  <button ion-button block >Login</button>
+  <button ion-button block>Login</button>
   
-</ion-content>
+</ion-content>-->
 
-<ion-content padding >
-  
-  <ion-card>
+<ion-content padding *ngIf="isLoggedIn">
+  <!-- Show the profile page if the user is logged in -->
 
-    <ion-item >
-      <ion-avatar item-left>
-        
-      </ion-avatar>
-      <h2></h2>
-      <p></p>
-    </ion-item>
-  
-  </ion-card>
-  
-  <button ion-button block >Logout</button>
-  
+  <!--
+    1. Profile Image 
+    2. Profile name
+    3. Previous orders
+    4. Manage subscriptions
+    5. Log Out.
+  -->
+
+  <div *ngIf="user">
+    <div> <img src="{{user.Image}}" id="profileImage"/></div>
+    <div style="text-align: center"> {{user.Name}} </div>
+    <div style="margin: 10px;"> <button ion-button block> Your History </button> </div>
+    <div style="margin: 10px;"> <button ion-button block> Manage your subscriptions </button></div>
+  </div>
+
 </ion-content>
