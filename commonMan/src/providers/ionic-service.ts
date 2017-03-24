@@ -3,7 +3,7 @@ import { Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 
-import {AuthHttp} from 'angular2-jwt';
+//import {AuthHttp} from 'angular2-jwt';
 // import {AuthService} from '../../providers/auth-service';
 
 /*
@@ -15,7 +15,7 @@ import {AuthHttp} from 'angular2-jwt';
 @Injectable()
 export class IonicService {
 
-  constructor(public http: Http, private authHttp: AuthHttp) {
+  constructor(public http: Http,) {// private authHttp: AuthHttp) {
   }
 
   createAuthorizationHeader(headers: Headers) {
