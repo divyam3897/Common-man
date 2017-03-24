@@ -19,7 +19,7 @@ export class CartService {
     this.cartItems.push (item);
   };
 
-  paymenyCheckout ()
+  paymentCheckout ()
   {
       
   }
