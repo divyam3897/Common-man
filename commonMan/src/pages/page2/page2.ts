@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { IonicService } from '../../providers/ionic-service';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController} from 'ionic-angular';
 
 @Component({
   selector: 'page-page2',
@@ -12,7 +12,7 @@ export class Page2 {
   icons: string[];
   items: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public ionicService: IonicService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public ionicService: IonicService,public alerCtrl: AlertController) {
     // If we navigated to this page, we will have an item available as a nav param
 
     this.selectedItem = navParams.get('Name');
@@ -45,6 +45,43 @@ export class Page2 {
         console.log(err);
       },
     ); 
+  }
+
+  subscribe(item,name) {
+    let alert = this.alerCtrl.create();
+    alert.setTitle(name);
+    alert.addInput({
+      type: 'radio',
+      label: 'Everyday',
+      value: 'E',
+      checked: true
+    });
+
+    alert.addInput({
+      type: 'radio',
+      label: 'Alternate',
+      value: 'A'
+    });
+
+    alert.addInput({
+      type: 'radio',
+      label: 'Weekly',
+      value: 'W'
+    });
+  
+    alert.addButton('Cancel');
+    alert.addButton({
+      text: 'Ok',
+      handler: data => {
+        console.log('Radio data:', data);    
+      }
+    });
+
+    alert.present().then(() => {
+      
+    });
+
+
   }
 
   // itemTapped(event, item) {

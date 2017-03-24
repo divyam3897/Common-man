@@ -16,7 +16,9 @@
       </ion-thumbnail>
       <h2>{{item.ItemName}}</h2>
       <p>{{item.ItemPrice}}</p>
+     <button (click)="subscribe(item._id,item.ItemName)" ion-button round>Subscribe</button>
      <ion-icon item-right name="add-circle"></ion-icon>
+     <br>
     </ion-item>
     </div>
   </ion-list>
