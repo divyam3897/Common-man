@@ -32,7 +32,8 @@ export function getAuthHttp(http) {
     Page1,
     Page2,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    ProfilePage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -43,7 +44,8 @@ export function getAuthHttp(http) {
     Page1,
     Page2,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,

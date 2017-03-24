@@ -23,6 +23,7 @@ export class AuthService {
   lock = new Auth0Lock(Auth0Vars.AUTH0_CLIENT_ID, Auth0Vars.AUTH0_DOMAIN, {
     auth: {
       redirect: false,
+      autoclose: true,
       params: {
         scope: 'openid profile offline_access',
         device: 'my-device'
