@@ -41,6 +41,7 @@ export class Page1 {
   itemTapped(item)
   {
     this.navCtrl.push(Page2, item);
+    console.log("hell",item)
   }
 
 }

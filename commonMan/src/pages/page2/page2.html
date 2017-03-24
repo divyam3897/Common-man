@@ -9,15 +9,16 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="getData(item)">
-      <img src={{item.ItemImage}} item-left/>
-        {{item.title}}
-      <div class="item-note" item-right>
-        {{item.ItemPrice}}
-      </div>
-    </button>
+    <ion-item *ngFor="let item of items" (click)="getData(item)">
+      <ion-thumbnail item-left>
+      <img src={{item.ItemImage}}>
+      </ion-thumbnail>
+      <h2>{{item.ItemName}}</h2>
+      <p>{{item.ItemPrice}}</p>
+     <ion-icon item-right name="add-circle"></ion-icon>
+    </ion-item>
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+ <!-- <div *ngIf="selectedItem" padding>-->
+    <!--You navigated here from <b>{{selectedItem.title}}</b>-->
+  <!--</div>-->
 </ion-content>

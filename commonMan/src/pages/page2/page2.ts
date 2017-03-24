@@ -14,7 +14,8 @@ export class Page2 {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public ionicService: IonicService) {
     // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+    this.selectedItem = this.navParams.get('item');
+    //console.log(JSON.stringify(this.selectedItem))
 
     // // Let's populate this page with some filler content for funzies
     // this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
