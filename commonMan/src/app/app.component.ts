@@ -2,17 +2,12 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { AuthService } from '../providers/auth-service';
 import { Page1 } from '../pages/page1/page1';
+import { Page2 } from '../pages/page2/page2';
+import { ProfilePage } from '../pages/profile/profile';
 import { LoginPage } from '../pages/login/login'
 import { RegisterPage } from '../pages/register/register'
-
-import {
-  Push,
-  PushToken
-} from '@ionic/cloud-angular';
-
-
 
 @Component({
   templateUrl: 'app.html'
@@ -20,18 +15,11 @@ import {
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Page1;
-
-  pages: Array<{title: string, component: any}>;
-
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-  //  this.initializeApp();
-
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Market', component: Page1 }//,
-      //{ title: 'Page Two', component: Page2 }
-    ];
+      { title: 'Market', component: Page1 },
+      { title: 'Profile', component: ProfilePage}
+     ];
 
   }
 
