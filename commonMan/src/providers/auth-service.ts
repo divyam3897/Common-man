@@ -2,6 +2,7 @@ import { Storage } from '@ionic/storage';
 import { AuthHttp, JwtHelper, tokenNotExpired } from 'angular2-jwt';
 import { Injectable, NgZone } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
+import { UserService } from './user';
 
 // Avoid name not found warnings
 declare var Auth0: any;
@@ -37,7 +38,7 @@ export class AuthService {
   accessToken: string;
   idToken: string;
   
-  constructor(private authHttp: AuthHttp, zone: NgZone) {
+  constructor(private authHttp: AuthHttp, zone: NgZone, public userService: UserService) {
     this.zoneImpl = zone;
     // Check if there is a profile saved in local storage
     this.storage.get('profile').then(profile => {
@@ -69,6 +70,10 @@ export class AuthService {
           profile.user_metadata = profile.user_metadata || {};
           this.storage.set('profile', JSON.stringify(profile));
           this.user = profile;
+
+          //Post user Object
+          this.userService.postUserDetails (profile);
+
         });
 
         this.lock.hide();
