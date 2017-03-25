@@ -14,7 +14,7 @@ export class Page2 {
   icons: string[];
   items: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public ionicService: IonicService,public alerCtrl: AlertController,public loadingCtrl: LoadingController, public cartService: CartService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public ionicService: IonicService,public alertCtrl: AlertController,public loadingCtrl: LoadingController, public cartService: CartService) {
     // If we navigated to this page, we will have an item available as a nav param
 
     this.presentLoading();
@@ -62,7 +62,7 @@ export class Page2 {
   }
 
   subscribe(item,name) {
-    let alert = this.alerCtrl.create();
+    let alert = this.alertCtrl.create();
     alert.setTitle(name);
     alert.addInput({
       type: 'radio',
@@ -98,10 +98,20 @@ export class Page2 {
 
   }
 
+  addItem() {
+
+    let alert = this.alertCtrl.create({
+      title: 'Thank you!',
+      subTitle: 'Item has been added to your cart.',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+}
+
   // itemTapped(event, item) {
   //   // That's right, we're pushing to ourselves!
   //   this.navCtrl.push(Page2, {
   //     item: item
   //   });
   // }
-}
