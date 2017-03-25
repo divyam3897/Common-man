@@ -33,7 +33,7 @@
 }
 
 .card, .card-ios {
-	border-radius: 50px;
+	border-radius: 20px;
 	text-align: center;
 	font-family: cursive;
 	background-color: rgba(56, 126, 245, 0.24);
@@ -41,10 +41,14 @@
 
 .card-title, .card-title-ios {
 	font-weight: 700;
-    font-size: 1.8em;
+    font-size: 1.2em;
     color: #4a4a4a;	
 }
 
 .icon .icon-ios .ion-ios-cart {
 	color:#FFF;
+}
+
+.larger bar-buttons bar-buttons-md {
+background-color:transparent; color: white; width:15px; height: 15px;
 }

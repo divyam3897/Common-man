@@ -6,9 +6,10 @@ import { Page2 } from '../pages/page2/page2';
 import { LoginPage } from '../pages/login/login';
 import { SearchPage } from '../pages/search/search';
 import { RegisterPage } from '../pages/register/register';
+import { HistoryPage } from '../pages/history/history';
 import { IonicService } from '../providers/ionic-service';
 import { UserService } from '../providers/user';
-import { CartService } from '../providers/cart-service'
+//import { CartService } from '../providers/cart-service'
 //import { AuthConfig, AuthHttp } from 'angular2-jwt';
 //import { AuthService } from '../providers/auth-service';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -36,7 +37,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { ProfilePage } from '../pages/profile/profile';
 
-import { Http } from '@angular/http';
+//import { Http } from '@angular/http';
 // import { Storage } from '@ionic/storage';
 
 // let storage: Storage = new Storage();
@@ -56,7 +57,8 @@ import { Http } from '@angular/http';
     LoginPage,
     RegisterPage,
     ProfilePage,
-    SearchPage
+    SearchPage,
+    HistoryPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -69,14 +71,14 @@ import { Http } from '@angular/http';
     LoginPage,
     RegisterPage,
     ProfilePage,
-    SearchPage
+    SearchPage,
+    HistoryPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     IonicService,
     UserService,
-    CartService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
     //AuthService,
     // {

@@ -10,7 +10,7 @@
 <ion-content>
   <ion-list>
     <div *ngFor="let item of items">    
-    <ion-item *ngIf="selectedItem == item.ItemCategory[0].Name" (click)="placeOrder (item)">
+    <ion-item *ngIf="selectedItem == item.ItemCategory[0].Name">
       <ion-thumbnail  item-left>
       <img src={{item.ItemImage}}>
       </ion-thumbnail>

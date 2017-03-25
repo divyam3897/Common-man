@@ -54,7 +54,7 @@ Similarly for IoS.
 
 ionic serve`
 
-`### Team members:
+### Team members:
 * Divyam Madaan  
 * Ashiv Gupta  
 * NVS Abhilash  

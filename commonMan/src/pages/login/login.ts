@@ -35,6 +35,10 @@ export class LoginPage {
     toast.present ();
   }
 
+  authenticate() {
+    this.navCtrl.setRoot(Page1);
+  
+  }
   authenticateUser (){
 
     var registeredUsers: any;

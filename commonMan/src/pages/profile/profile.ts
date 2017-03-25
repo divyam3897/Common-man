@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { HistoryPage } from '../history/history';
 
 //import { AuthService } from '../../providers/auth-service';
 
@@ -33,6 +34,9 @@ export class ProfilePage {
   
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
+  }
+  history() {
+  this.navCtrl.push(HistoryPage);
   }
 
 }

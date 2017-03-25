@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { Page1 } from '../page1/page1';
 /*
   Generated class for the Register page.
 
@@ -28,6 +28,10 @@ export class RegisterPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
+  }
+
+  register() {
+  this.navCtrl.setRoot(Page1);
   }
 
   
