@@ -3,6 +3,7 @@ import { IonicService } from '../../providers/ionic-service';
 import { NavController } from 'ionic-angular';
 import { Page2 } from '../page2/page2';
 import { SearchPage } from '../search/search';
+import { CartPage } from '../cart/cart';
 import { LoadingController,Loading } from 'ionic-angular';
 
 @Component({
@@ -60,4 +61,8 @@ export class Page1 {
     this.navCtrl.push(SearchPage);
   }
 
+  cartTapped()
+  {
+    this.navCtrl.push(CartPage);
+  }
 }

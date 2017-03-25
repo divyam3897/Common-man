@@ -9,7 +9,8 @@ import { RegisterPage } from '../pages/register/register';
 import { HistoryPage } from '../pages/history/history';
 import { IonicService } from '../providers/ionic-service';
 import { UserService } from '../providers/user';
-import { CartService } from '../providers/cart-service'
+import { CartService } from '../providers/cart-service';
+import { CartPage } from '../pages/cart/cart';
 //import { AuthConfig, AuthHttp } from 'angular2-jwt';
 //import { AuthService } from '../providers/auth-service';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -58,7 +59,8 @@ import { ProfilePage } from '../pages/profile/profile';
     RegisterPage,
     ProfilePage,
     SearchPage,
-    HistoryPage
+    HistoryPage,
+    CartPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -72,7 +74,8 @@ import { ProfilePage } from '../pages/profile/profile';
     RegisterPage,
     ProfilePage,
     SearchPage,
-    HistoryPage
+    HistoryPage,
+    CartPage
   ],
   providers: [
     StatusBar,
