@@ -9,7 +9,7 @@ import { RegisterPage } from '../pages/register/register';
 import { HistoryPage } from '../pages/history/history';
 import { IonicService } from '../providers/ionic-service';
 import { UserService } from '../providers/user';
-//import { CartService } from '../providers/cart-service'
+import { CartService } from '../providers/cart-service'
 //import { AuthConfig, AuthHttp } from 'angular2-jwt';
 //import { AuthService } from '../providers/auth-service';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -76,6 +76,7 @@ import { ProfilePage } from '../pages/profile/profile';
   ],
   providers: [
     StatusBar,
+    CartService,
     SplashScreen,
     IonicService,
     UserService,

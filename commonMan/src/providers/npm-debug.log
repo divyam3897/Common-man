@@ -1,0 +1,137 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install' ]
+2 info using npm@3.5.2
+3 info using node@v4.2.6
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData @ionic-native/native-storage
+20 silly mapToRegistry name @ionic-native/native-storage
+21 silly mapToRegistry scope (from package name) @ionic-native
+22 verbose mapToRegistry no registry URL found in name for scope @ionic-native
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry uri https://registry.npmjs.org/@ionic-native%2fnative-storage
+26 silly fetchNamedPackageData @ionic-native/secure-storage
+27 silly mapToRegistry name @ionic-native/secure-storage
+28 silly mapToRegistry scope (from package name) @ionic-native
+29 verbose mapToRegistry no registry URL found in name for scope @ionic-native
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry https://registry.npmjs.org/
+32 silly mapToRegistry uri https://registry.npmjs.org/@ionic-native%2fsecure-storage
+33 silly fetchNamedPackageData @ionic/cloud-angular
+34 silly mapToRegistry name @ionic/cloud-angular
+35 silly mapToRegistry scope (from package name) @ionic
+36 verbose mapToRegistry no registry URL found in name for scope @ionic
+37 silly mapToRegistry using default registry
+38 silly mapToRegistry registry https://registry.npmjs.org/
+39 silly mapToRegistry uri https://registry.npmjs.org/@ionic%2fcloud-angular
+40 verbose request uri https://registry.npmjs.org/@ionic-native%2fnative-storage
+41 verbose request no auth needed
+42 info attempt registry request try #1 at 9:42:53 AM
+43 verbose request id 49c1ce3a3c04a781
+44 http request GET https://registry.npmjs.org/@ionic-native%2fnative-storage
+45 verbose request uri https://registry.npmjs.org/@ionic-native%2fsecure-storage
+46 verbose request no auth needed
+47 info attempt registry request try #1 at 9:42:53 AM
+48 http request GET https://registry.npmjs.org/@ionic-native%2fsecure-storage
+49 verbose request uri https://registry.npmjs.org/@ionic%2fcloud-angular
+50 verbose request no auth needed
+51 info attempt registry request try #1 at 9:42:53 AM
+52 http request GET https://registry.npmjs.org/@ionic%2fcloud-angular
+53 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=connect ECONNREFUSED 172.31.1.6:8080
+54 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=connect ECONNREFUSED 172.31.1.6:8080
+55 info attempt registry request try #2 at 9:43:09 AM
+56 http request GET https://registry.npmjs.org/@ionic%2fcloud-angular
+57 info attempt registry request try #2 at 9:43:09 AM
+58 http request GET https://registry.npmjs.org/@ionic-native%2fnative-storage
+59 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=connect ECONNREFUSED 172.31.1.6:8080
+60 info attempt registry request try #3 at 9:44:14 AM
+61 http request GET https://registry.npmjs.org/@ionic-native%2fnative-storage
+62 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=connect ETIMEDOUT 172.31.1.6:8080
+63 info attempt registry request try #2 at 9:45:10 AM
+64 http request GET https://registry.npmjs.org/@ionic-native%2fsecure-storage
+65 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=connect ETIMEDOUT 172.31.1.6:8080
+66 info attempt registry request try #3 at 9:46:15 AM
+67 http request GET https://registry.npmjs.org/@ionic%2fcloud-angular
+68 silly fetchPackageMetaData Error: tunneling socket could not be established, cause=connect ETIMEDOUT 172.31.1.6:8080
+68 silly fetchPackageMetaData     at ClientRequest.onError (/usr/share/npm/node_modules/request/node_modules/tunnel-agent/index.js:174:17)
+68 silly fetchPackageMetaData     at ClientRequest.g (events.js:260:16)
+68 silly fetchPackageMetaData     at emitOne (events.js:77:13)
+68 silly fetchPackageMetaData     at ClientRequest.emit (events.js:169:7)
+68 silly fetchPackageMetaData     at Socket.socketErrorListener (_http_client.js:258:9)
+68 silly fetchPackageMetaData     at emitOne (events.js:77:13)
+68 silly fetchPackageMetaData     at Socket.emit (events.js:169:7)
+68 silly fetchPackageMetaData     at emitErrorNT (net.js:1256:8)
+68 silly fetchPackageMetaData     at nextTickCallbackWith2Args (node.js:441:9)
+68 silly fetchPackageMetaData     at process._tickCallback (node.js:355:17)
+68 silly fetchPackageMetaData  error for @ionic-native/native-storage@^3.2.3 { [Error: tunneling socket could not be established, cause=connect ETIMEDOUT 172.31.1.6:8080] code: 'ECONNRESET' }
+69 silly fetchPackageMetaData Error: tunneling socket could not be established, cause=connect ECONNREFUSED 172.31.1.6:8080
+69 silly fetchPackageMetaData     at ClientRequest.onError (/usr/share/npm/node_modules/request/node_modules/tunnel-agent/index.js:174:17)
+69 silly fetchPackageMetaData     at ClientRequest.g (events.js:260:16)
+69 silly fetchPackageMetaData     at emitOne (events.js:77:13)
+69 silly fetchPackageMetaData     at ClientRequest.emit (events.js:169:7)
+69 silly fetchPackageMetaData     at Socket.socketErrorListener (_http_client.js:258:9)
+69 silly fetchPackageMetaData     at emitOne (events.js:77:13)
+69 silly fetchPackageMetaData     at Socket.emit (events.js:169:7)
+69 silly fetchPackageMetaData     at emitErrorNT (net.js:1256:8)
+69 silly fetchPackageMetaData     at nextTickCallbackWith2Args (node.js:441:9)
+69 silly fetchPackageMetaData     at process._tickCallback (node.js:355:17)
+69 silly fetchPackageMetaData  error for @ionic/cloud-angular@^0.11.0 { [Error: tunneling socket could not be established, cause=connect ECONNREFUSED 172.31.1.6:8080] code: 'ECONNRESET' }
+70 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=connect ETIMEDOUT 172.31.1.6:8080
+71 info attempt registry request try #3 at 9:48:18 AM
+72 http request GET https://registry.npmjs.org/@ionic-native%2fsecure-storage
+73 silly fetchPackageMetaData Error: tunneling socket could not be established, cause=connect ECONNREFUSED 172.31.1.6:8080
+73 silly fetchPackageMetaData     at ClientRequest.onError (/usr/share/npm/node_modules/request/node_modules/tunnel-agent/index.js:174:17)
+73 silly fetchPackageMetaData     at ClientRequest.g (events.js:260:16)
+73 silly fetchPackageMetaData     at emitOne (events.js:77:13)
+73 silly fetchPackageMetaData     at ClientRequest.emit (events.js:169:7)
+73 silly fetchPackageMetaData     at Socket.socketErrorListener (_http_client.js:258:9)
+73 silly fetchPackageMetaData     at emitOne (events.js:77:13)
+73 silly fetchPackageMetaData     at Socket.emit (events.js:169:7)
+73 silly fetchPackageMetaData     at emitErrorNT (net.js:1256:8)
+73 silly fetchPackageMetaData     at nextTickCallbackWith2Args (node.js:441:9)
+73 silly fetchPackageMetaData     at process._tickCallback (node.js:355:17)
+73 silly fetchPackageMetaData  error for @ionic-native/secure-storage@^3.2.3 { [Error: tunneling socket could not be established, cause=connect ECONNREFUSED 172.31.1.6:8080] code: 'ECONNRESET' }
+74 silly rollbackFailedOptional Starting
+75 silly rollbackFailedOptional Finishing
+76 silly runTopLevelLifecycles Starting
+77 silly runTopLevelLifecycles Finishing
+78 silly install printInstalled
+79 verbose stack Error: tunneling socket could not be established, cause=connect ETIMEDOUT 172.31.1.6:8080
+79 verbose stack     at ClientRequest.onError (/usr/share/npm/node_modules/request/node_modules/tunnel-agent/index.js:174:17)
+79 verbose stack     at ClientRequest.g (events.js:260:16)
+79 verbose stack     at emitOne (events.js:77:13)
+79 verbose stack     at ClientRequest.emit (events.js:169:7)
+79 verbose stack     at Socket.socketErrorListener (_http_client.js:258:9)
+79 verbose stack     at emitOne (events.js:77:13)
+79 verbose stack     at Socket.emit (events.js:169:7)
+79 verbose stack     at emitErrorNT (net.js:1256:8)
+79 verbose stack     at nextTickCallbackWith2Args (node.js:441:9)
+79 verbose stack     at process._tickCallback (node.js:355:17)
+80 verbose cwd /var/www/html/hint/commonMan/src/providers
+81 error Linux 4.4.0-59-generic
+82 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install"
+83 error node v4.2.6
+84 error npm  v3.5.2
+85 error code ECONNRESET
+86 error network tunneling socket could not be established, cause=connect ETIMEDOUT 172.31.1.6:8080
+87 error network This is most likely not a problem with npm itself
+87 error network and is related to network connectivity.
+87 error network In most cases you are behind a proxy or have bad network settings.
+87 error network
+87 error network If you are behind a proxy, please make sure that the
+87 error network 'proxy' config is set properly.  See: 'npm help config'
+88 verbose exit [ 1, true ]
