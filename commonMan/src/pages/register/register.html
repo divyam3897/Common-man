@@ -14,34 +14,33 @@
 
 
 <ion-content padding>
-	<form [formGroup]="myForm">
+  <form #form="ngForm" (ngSubmit)="details(form.value)">
 	<ion-item>
 	    <ion-label floating>Full Name</ion-label>
-	    <ion-input formControlName="name"></ion-input>
+	    <ion-input name="name" ngModel></ion-input>
     </ion-item>
     <ion-item>
 	    <ion-label floating>Username</ion-label>
-	    <ion-input formControlName="username"></ion-input>
+	    <ion-input name="userName" ngModel></ion-input>
     </ion-item>
     <ion-item>
 	    <ion-label floating>Password</ion-label>
-	    <ion-input formControlName="password" type="password"></ion-input>
+	    <ion-input type="password" name="password" ngModel></ion-input>
     </ion-item>
     <ion-item>
 	    <ion-label floating>Email</ion-label>
-	    <ion-input formControlName="email" type="email"></ion-input>
+	    <ion-input  type="email" name="email" ngModel></ion-input>
     </ion-item>
     <ion-item>
 	    <ion-label floating>Contact No.</ion-label>
-	    <ion-input formControlName="contact" type="number"></ion-input>
+	    <ion-input type="number" name="number" ngModel></ion-input>
     </ion-item>
     <ion-item>
 	    <ion-label floating>Address</ion-label>
-	    <ion-input formControlName="address"></ion-input>
+	    <ion-input name="address" ngModel></ion-input>
     </ion-item>
     <br>
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color:black;" (click)="register()">
-  Register
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color:black;" type="submit">Register
 </button>
 </form>
 </ion-content>

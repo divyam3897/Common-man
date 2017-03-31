@@ -36,7 +36,7 @@ It's a store for your daily needs. It's a common app for a common app with commo
 * Install the node dependencies
 
 ```
-cd commonMan
+cd sudoBangBang/commonMan
 npm install
 ```
 
@@ -52,7 +52,7 @@ Similarly for IoS.
  
 * To run in web browser run
 
-ionic serve`
+`ionic serve`
 
 ### Team members:
 * Divyam Madaan  
