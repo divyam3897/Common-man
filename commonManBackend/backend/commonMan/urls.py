@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'menu/categories',categoriesDetails),
     url(r'menu/items',itemDetails),
     url(r'register/',register),
+    url(r'login/',loginView),
 ]

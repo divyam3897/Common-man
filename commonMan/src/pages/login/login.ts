@@ -3,6 +3,7 @@ import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
 import { Page1 } from '../page1/page1';
 import { UserService } from '../../providers/user';
+import {Http, Headers} from '@angular/http';
 
 /*
   Generated class for the Login page.
@@ -19,7 +20,7 @@ export class LoginPage {
   password: any;
   incorrectLogin: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userService: UserService, public toastCtrl: ToastController) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public userService: UserService, public toastCtrl: ToastController,public http:Http) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
@@ -35,51 +36,25 @@ export class LoginPage {
     toast.present ();
   }
 
-  authenticate() {
-    this.navCtrl.setRoot(Page1);
-  
-  }
-  authenticateUser (){
-
-    var registeredUsers: any;
-    this.userService.getUserProfiles ().subscribe (
-      data => {
-        registeredUsers = data;
-      },
-      err => {
-        console.log(err);
-        this.incorrectLogin = true;
-      },
-    );
-
-    if (!this.incorrectLogin)
-    {
-      console.log (this.userCredential);
-      console.log (this.password);
-      for (let userObj of registeredUsers) {
-        console.log ("-"+userObj.email);
-        console.log ("-"+userObj.pwd);
-        if (this.userCredential == userObj.name || this.userCredential == userObj.email)
-          {
-            if(this.password == userObj.pwd)
-            {
-              this.navCtrl.push(Page1);
-              return;
-            }
-          }
-      }
-    }
-    this.userCredential = "";
-    this.password = "";
-    this.presentToast ();
-  };
 
   registerUser() {
   this.navCtrl.push(RegisterPage);
   }
 
-  login() {
-    
+  login(value:any) {
+    console.clear();
+    value = JSON.stringify(value)
+    let headers = new Headers()
+    headers.append('Content-Type', 'application/json');
+    this.http.post('http://localhost:8100/login',value, {headers: headers})
+    .map(res => res.json())
+    .subscribe(data => {
+      if(data['status'] == "LoggedIn")
+        this.navCtrl.setRoot(Page1);
+      else
+        this.presentToast();
+    });
   }
 
-}
+  }
+

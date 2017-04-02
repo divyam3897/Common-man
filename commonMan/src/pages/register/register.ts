@@ -22,17 +22,13 @@ export class RegisterPage {
     console.log('ionViewDidLoad RegisterPage');
   }
 
-  register() {
-    this.navCtrl.setRoot(Page1);
-  }
-
   details(value:any) {
     console.clear();
     console.log(value);
     value = JSON.stringify(value)
     let headers = new Headers()
-    headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-    this.http.post('http://localhost:8100/api', value , {headers: headers})
+    headers.append('Content-Type', 'application/json');
+    this.http.post('http://localhost:8100/api',value, {headers: headers})
     .subscribe(
       data => console.log('Received:' + data),
         err => console.log(err),
