@@ -17,7 +17,7 @@
       <h2>{{item.ItemName}}</h2>
       <p>{{item.ItemPrice}}</p>
      <button (click)="subscribe(item._id,item.ItemName)" ion-button round>Subscribe</button>
-     <ion-icon item-right name="add-circle" (click)="addItem()"></ion-icon>
+     <ion-icon item-right name="add-circle" (click)="addItem(item.ItemName)"></ion-icon>
      <br>
     </ion-item>
     </div>

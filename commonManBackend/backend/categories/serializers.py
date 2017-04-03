@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import *
+from users.models import *
 
 class MenuSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,3 +12,9 @@ class categoryItemsSerializer(serializers.ModelSerializer):
     class Meta:
         model = categoryItem
         fields = "__all__"
+
+class cartSerializer(serializers.ModelSerializer):
+    item = categoryItemsSerializer()
+    class Meta:
+        model = cart
+        fields = ('item','user')

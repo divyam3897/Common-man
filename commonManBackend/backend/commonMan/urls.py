@@ -22,6 +22,11 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'menu/categories',categoriesDetails),
     url(r'menu/items',itemDetails),
+    url(r'menu/cart',cartDetails),
     url(r'register/',register),
     url(r'login/',loginView),
+    url(r'add/',addItem),
+    url(r'cart/',cartItems),
+    url(r'check/',loggedIn),
+    url(r'logout/',logoutView),
 ]

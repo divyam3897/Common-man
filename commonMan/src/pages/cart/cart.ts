@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { CartService } from '../../providers/cart-service';
 
 /*
@@ -13,15 +13,23 @@ import { CartService } from '../../providers/cart-service';
   templateUrl: 'cart.html'
 })
 export class CartPage {
+  cartItems: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public cartService: CartService) {}
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, public cartService: CartService, public alertCtrl: AlertController) {
+  this.cartItems = this.navParams;
+  console.log('cart',this.cartItems.data)
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartPage');
   }
 
   paymentProcess (){
-    console.log ("Payment obj");
+     let alert = this.alertCtrl.create({
+      title: 'Thank you!',
+      subTitle: 'Item will be shipped to you.',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
 }

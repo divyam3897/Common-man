@@ -3,7 +3,8 @@ from .models import *
 from rest_framework.decorators import api_view
 from .serializers import *
 from rest_framework.response import Response
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+from users.models import *
 
 @api_view(['GET'])
 def categoriesDetails(request):
@@ -21,3 +22,12 @@ def itemDetails(request):
     print( serializers.data)
     #return HttpResponse(serializers.data)
     return Response(serializers.data)  
+
+@api_view(['GET'])
+def cartDetails(request):
+    item = cart.objects.all()
+    serializers = cartSerializer(item,many=True)
+    print("DATA:")
+    print( serializers.data)
+    #return HttpResponse(serializers.data)
+    return JsonResponse(serializers.data,safe=False)  

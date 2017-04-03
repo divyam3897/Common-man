@@ -5,6 +5,7 @@ import { Page2 } from '../page2/page2';
 import { SearchPage } from '../search/search';
 import { CartPage } from '../cart/cart';
 import { LoadingController,Loading } from 'ionic-angular';
+import {Http, Headers} from '@angular/http';
 
 @Component({
   selector: 'page-page1',
@@ -14,7 +15,7 @@ export class Page1 {
   loading: Loading;
   data:any;
 
-  constructor(public navCtrl: NavController, public ionicService: IonicService, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public ionicService: IonicService, public loadingCtrl: LoadingController,public http:Http) {
     
     this.presentLoading();
     this.getData ();
@@ -57,12 +58,19 @@ export class Page1 {
 
   searchTapped()
   {
-    console.log('hey');
     this.navCtrl.push(SearchPage);
   }
 
   cartTapped()
   {
-    this.navCtrl.push(CartPage);
+    let headers = new Headers()
+    headers.append('Content-Type', 'application/json');
+    var response = this.http.get('http://localhost:8100/cart', { headers: headers })
+    .map(res => res.json())
+    .subscribe(data => {
+      this.navCtrl.push(CartPage,data)
+      console.log(data)
+    });
+    console.log(response);
   }
 }

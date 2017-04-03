@@ -5,7 +5,9 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <ion-navbar>
     <ion-title>cart</ion-title>
   </ion-navbar>
@@ -14,22 +16,20 @@
 
 <ion-content padding>
 
-<img src="https://panemirates.com/skin/frontend/pan/default/images/empty-cart-v1.png">
-<!--ion-list>
-    <div *ngFor="let item of cartItems">    
+<ion-list>
+    <div *ngFor="let itemDetails of cartItems.data">    
     <ion-item>
       <ion-thumbnail  item-left>
-      <img src={{item.ItemImage}}>
+        <img src={{itemDetails.item.image}}>
       </ion-thumbnail>
-      <h2>{{item.ItemName}}</h2>
-      <p>{{item.ItemPrice}}</p>
+      <h2>{{itemDetails.item.itemName}}</h2>
      <ion-icon item-right name="md-checkmark-circle-outline"></ion-icon>
     </ion-item>
     </div>
   </ion-list>
 
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color:limegreen;" (click)="paymentProcess ()">
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color:limegreen;" (click)="paymentProcess()">
   Proceed To Checkout
-</button-->
+</button>
 
 </ion-content>

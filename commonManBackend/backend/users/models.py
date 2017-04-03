@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from categories.models import *
 
 class UserDetails(models.Model):
 	name = models.OneToOneField(User, related_name='user')
@@ -11,3 +12,9 @@ class UserDetails(models.Model):
 
 	def __str__(self):
             return self.userName
+
+class cart(models.Model):
+    item = models.ForeignKey(categoryItem)
+    user = models.ForeignKey(User)
+
+

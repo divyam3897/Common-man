@@ -11,6 +11,23 @@
     {
       "path": "/login",
       "proxyUrl":" http://127.0.0.1:8000/login/"
+    },
+     {
+      "path": "/add",
+      "proxyUrl":" http://127.0.0.1:8000/add/"
+    },
+    {
+      "path": "/cart",
+      "proxyUrl":" http://127.0.0.1:8000/menu/cart/"
+    },
+  {
+      "path": "/loggedIn",
+      "proxyUrl":" http://127.0.0.1:8000/check/"
+    },
+  {
+      "path": "/logout",
+      "proxyUrl":" http://127.0.0.1:8000/logout/"
     }
-  ]
+
+ ]
 }

@@ -8,6 +8,8 @@ import { Page1 } from '../pages/page1/page1';
 
 import { ProfilePage } from '../pages/profile/profile';
 import { LoginPage } from '../pages/login/login';
+import { LogoutPage } from '../pages/logout/logout';
+import {Http, Headers} from '@angular/http';
 //import { RegisterPage } from '../pages/register/register';
 
 //import { LoginPage } from '../pages/login/login'
@@ -25,20 +27,31 @@ import { LoginPage } from '../pages/login/login';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any;
 
   pages: Array<{title: string, component: any, icon: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) { // , public auth: AuthService) {
-    this.initializeApp();
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,public http: Http) { // , public auth: AuthService) {
   //  this.initializeApp();
-    // used for an example of ngFor and navigation
+   console.clear();
+ let headers = new Headers()
+    headers.append('Content-Type', 'application/json');
+    this.http.get('http://localhost:8100/loggedIn',{headers: headers})
+    .map(res => res.json())
+    .subscribe(data => {
+      if(data['status'] == "LoggedIn")
+        this.rootPage = Page1;
+      else
+        this.rootPage = LoginPage;
+    });
+   // used for an example of ngFor and navigation
+    this.initializeApp();
     this.pages = [
       { title: 'Market', component: Page1, icon: 'basket' },
       { title: 'Profile', component: ProfilePage, icon: 'contact'},
-      { title: 'Logout', component: LoginPage, icon: 'log-out'}
+      { title: 'Logout', component: LogoutPage, icon: 'log-out'}
      ];
-
+ 
   }
 
   initializeApp() {
@@ -48,15 +61,7 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-    //this.push.register().then((t: PushToken) => {
-/*  return this.push.saveToken(t);
-}).then((t: PushToken) => {
-  console.log('Token saved:', t.token);
-});
-this.push.rx.notification()
-  .subscribe((msg) => {
-    alert(msg.title + ': ' + msg.text);
-  });*/
+    
   }
 
   openPage(page) {

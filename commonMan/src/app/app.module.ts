@@ -4,6 +4,7 @@ import { MyApp } from './app.component';
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import { LoginPage } from '../pages/login/login';
+import { LogoutPage } from '../pages/logout/logout';
 import { SearchPage } from '../pages/search/search';
 import { RegisterPage } from '../pages/register/register';
 import { HistoryPage } from '../pages/history/history';
@@ -60,7 +61,8 @@ import { ProfilePage } from '../pages/profile/profile';
     ProfilePage,
     SearchPage,
     HistoryPage,
-    CartPage
+    CartPage,
+    LogoutPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -75,7 +77,8 @@ import { ProfilePage } from '../pages/profile/profile';
     ProfilePage,
     SearchPage,
     HistoryPage,
-    CartPage
+    CartPage,
+    LogoutPage
   ],
   providers: [
     StatusBar,
@@ -84,13 +87,6 @@ import { ProfilePage } from '../pages/profile/profile';
     IonicService,
     UserService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
-    //AuthService,
-    // {
-    //   provide: AuthHttp,
-    //   useFactory: getAuthHttp,
-    //   deps: [Http]
-    // }
-    
   ]
 })
 export class AppModule {}
