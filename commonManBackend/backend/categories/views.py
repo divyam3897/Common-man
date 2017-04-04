@@ -10,24 +10,22 @@ from users.models import *
 def categoriesDetails(request):
     item = Menu.objects.all()
     serializers = MenuSerializer(item,many=True)
-    print("DATA:")
-    print( serializers.data)
     return Response(serializers.data)
 
 @api_view(['GET'])
 def itemDetails(request):
     item = categoryItem.objects.all()
     serializers = categoryItemsSerializer(item,many=True)
-    print("DATA:")
-    print( serializers.data)
-    #return HttpResponse(serializers.data)
     return Response(serializers.data)  
 
 @api_view(['GET'])
 def cartDetails(request):
     item = cart.objects.all()
     serializers = cartSerializer(item,many=True)
-    print("DATA:")
-    print( serializers.data)
-    #return HttpResponse(serializers.data)
+    return JsonResponse(serializers.data,safe=False)  
+
+@api_view(['GET'])
+def subscribedItemsDetails(request):
+    item = subscribedItems.objects.all()
+    serializers = subscribedItemsSerializer(item,many=True)
     return JsonResponse(serializers.data,safe=False)  

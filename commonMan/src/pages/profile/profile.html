@@ -29,8 +29,7 @@
   <div *ngIf="user">
     <div> <img src="{{user.Image}}" id="profileImage"/></div>
     <div style="text-align: center"> {{user.Name}} </div>
-    <div style="margin: 10px;"> <button ion-button block (click)="history()"> Your History </button> </div>
-    <div style="margin: 10px;"> <button ion-button block (click)="history()"> Manage your subscriptions </button></div>
+    <div style="margin: 10px;"> <button ion-button block (click)="showSubscriptions()">Your subscriptions </button></div>
   </div>
 
 </ion-content>

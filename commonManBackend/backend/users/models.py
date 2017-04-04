@@ -17,4 +17,10 @@ class cart(models.Model):
     item = models.ForeignKey(categoryItem)
     user = models.ForeignKey(User)
 
+class subscribedItems(models.Model):
+    item = models.ForeignKey(categoryItem)
+    user = models.ForeignKey(User)
+    time = models.CharField(max_length=50)
+
+
 

@@ -5,3 +5,4 @@ from users.models import *
 admin.site.register(Menu)
 admin.site.register(categoryItem)
 admin.site.register(cart)
+admin.site.register(subscribedItems)

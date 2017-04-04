@@ -42,26 +42,8 @@ def addItem(request):
     data = json.loads(request.body.decode('utf-8'))
     itemName = data['item']
     item = categoryItem.objects.get(itemName=itemName)
-    cartItem = cart(item=item,user=request.user)
-    cartItem.save()
+    cartItem = cart.objects.get_or_create(item=item,user=request.user)
     return JsonResponse({"status":"Item added"})
-
-@csrf_exempt
-def cartItems(request):
-    itemDetails = cart.objects.filter(user= request.user)
-    # print(itemDetails)
-    allItems = {}
-    items = []
-    for i in itemDetails:
-        # items.append(i.item.name)
-        # print(i.item.price)
-        allItems['name'] = i.item.itemName # = {
-                # "image": i.item.image,
-                # "price": i.item.price,
-                # }
-    # allItems['item'] = items
-    print(allItems)
-    return JsonResponse(allItems)
 
 @csrf_exempt
 def loggedIn(request):
@@ -74,4 +56,14 @@ def loggedIn(request):
 def logoutView(request):
     logout(request)
     return JsonResponse({"status":"Logout out"})
+
+@csrf_exempt
+def subscribeItem(request):
+    data = json.loads(request.body.decode('utf-8'))
+    itemName = data['item']
+    item = categoryItem.objects.get(itemName=itemName)
+    time = data['resp']
+    subItem = subscribedItems.objects.get_or_create(item=item,user=request.user,time=time)
+    return JsonResponse({"status":"Item subscribed"})
+
 

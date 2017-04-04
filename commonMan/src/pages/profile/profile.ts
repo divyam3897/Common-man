@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HistoryPage } from '../history/history';
+import {Http, Headers} from '@angular/http';
 
 //import { AuthService } from '../../providers/auth-service';
 
@@ -19,7 +20,7 @@ export class ProfilePage {
   isLoggedIn: boolean;
   user: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public http: Http) {
   
     // TODO: Check if the user is logged In or Not and set the variable
     this.isLoggedIn = true;
@@ -38,5 +39,17 @@ export class ProfilePage {
   history() {
   this.navCtrl.push(HistoryPage);
   }
+
+  showSubscriptions() {
+      let headers = new Headers()
+    headers.append('Content-Type', 'application/json');
+    this.http.get('http://localhost:8100/profile/subscribe', { headers: headers })
+    .map(res => res.json())
+    .subscribe(data => {
+      console.log(data)
+      this.navCtrl.push(HistoryPage,data)
+    });
+  }
+
 
 }

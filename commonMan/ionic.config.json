@@ -27,7 +27,16 @@
   {
       "path": "/logout",
       "proxyUrl":" http://127.0.0.1:8000/logout/"
+    },
+  {
+      "path": "/subscribe",
+      "proxyUrl":" http://127.0.0.1:8000/subscribe/"
+    },
+ {
+      "path": "/profile/subscribe",
+      "proxyUrl":" http://127.0.0.1:8000/menu/subscribe/"
     }
+
 
  ]
 }

@@ -52,27 +52,38 @@ export class Page2 {
     alert.addInput({
       type: 'radio',
       label: 'Everyday',
-      value: 'E',
+      value: 'Everyday',
       checked: true
     });
 
     alert.addInput({
       type: 'radio',
       label: 'Alternate',
-      value: 'A'
+      value: 'Alternate'
     });
 
     alert.addInput({
       type: 'radio',
       label: 'Weekly',
-      value: 'W'
+      value: 'Weekly'
     });
 
     alert.addButton('Cancel');
     alert.addButton({
       text: 'Ok',
       handler: data => {
-        console.log('Radio data:', data);    
+     var value = {
+      'item': item,
+      'resp': data,
+    }
+    let headers = new Headers()
+    headers.append('Content-Type', 'application/json');
+    console.log(value)
+    this.http.post('http://localhost:8100/subscribe',value, {headers: headers})
+    .map(res => res.json())
+    .subscribe(data => {
+      console.log("data",data);
+    });
       }
     });
 

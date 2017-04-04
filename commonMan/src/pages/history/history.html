@@ -14,5 +14,15 @@
 
 
 <ion-content padding> 
-<img src="https://panemirates.com/skin/frontend/pan/default/images/empty-cart-v1.png">
+  <ion-list>
+    <div *ngFor="let itemDetails of subscribedItems.data">    
+    <ion-item>
+      <ion-thumbnail  item-left>
+        <img src={{itemDetails.item.image}}>
+      </ion-thumbnail>
+      <h2>{{itemDetails.item.itemName}}</h2>
+      <h3>{{itemDetails.time}}</h3>
+    </ion-item>
+    </div>
+  </ion-list>
 </ion-content>
