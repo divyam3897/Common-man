@@ -16,21 +16,23 @@ import {Http, Headers} from '@angular/http';
   templateUrl: 'profile.html'
 })
 export class ProfilePage {
-
-  isLoggedIn: boolean;
   user: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public http: Http) {
   
     // TODO: Check if the user is logged In or Not and set the variable
-    this.isLoggedIn = true;
-
-    this.user = {
-      'Name': 'NVS Abhilash',
+      let headers = new Headers()
+    headers.append('Content-Type', 'application/json');
+    this.http.get('http://localhost:8100/user', { headers: headers })
+    .map(res => res.json())
+    .subscribe(data => {
+     this.user = {
+      'Name': data.user,
       'Image': 'https://avatars3.githubusercontent.com/u/15072945?v=3&s=400'
-
     }
-  }
+    });
+
+ }
   
   
   ionViewDidLoad() {

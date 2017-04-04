@@ -66,4 +66,8 @@ def subscribeItem(request):
     subItem = subscribedItems.objects.get_or_create(item=item,user=request.user,time=time)
     return JsonResponse({"status":"Item subscribed"})
 
+@csrf_exempt
+def userDetails(request):
+    return JsonResponse({"user": request.user.username, "email": request.user.email})
+
 

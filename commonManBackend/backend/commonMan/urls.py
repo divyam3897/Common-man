@@ -30,4 +30,5 @@ urlpatterns = [
     url(r'check/',loggedIn),
     url(r'logout/',logoutView),
     url(r'subscribe/',subscribeItem),
+    url(r'user/',userDetails),
 ]
