@@ -2,24 +2,11 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-//import { AuthService } from '../providers/auth-service';
-//import { CartService } from '../providers/cart-service';
 import { Page1 } from '../pages/page1/page1';
-
 import { ProfilePage } from '../pages/profile/profile';
 import { LoginPage } from '../pages/login/login';
 import { LogoutPage } from '../pages/logout/logout';
 import {Http, Headers} from '@angular/http';
-//import { RegisterPage } from '../pages/register/register';
-
-//import { LoginPage } from '../pages/login/login'
-//import { RegisterPage } from '../pages/register/register'
-
-/*import {*/
-  //Push,
-  //PushToken
-//} from '@ionic/cloud-angular';
-
 
 @Component({
   templateUrl: 'app.html'

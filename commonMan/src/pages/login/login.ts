@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
 import { Page1 } from '../page1/page1';
-import { UserService } from '../../providers/user';
 import {Http, Headers} from '@angular/http';
 
 /*
@@ -20,7 +19,7 @@ export class LoginPage {
   password: any;
   incorrectLogin: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userService: UserService, public toastCtrl: ToastController,public http:Http) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController,public http:Http) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');

@@ -9,23 +9,8 @@
   </ion-navbar>
 </ion-header>
 
-<!--<ion-content padding *ngIf="!isLoggedIn">
-  
-  <button ion-button block>Login</button>
-  
-</ion-content>-->
 
-<ion-content padding *ngIf="isLoggedIn">
-  <!-- Show the profile page if the user is logged in -->
-
-  <!--
-    1. Profile Image 
-    2. Profile name
-    3. Previous orders
-    4. Manage subscriptions
-    5. Log Out.
-  -->
-
+<ion-content padding>
   <div *ngIf="user">
     <div> <img src="{{user.Image}}" id="profileImage"/></div>
     <div style="text-align: center"> {{user.Name}} </div>

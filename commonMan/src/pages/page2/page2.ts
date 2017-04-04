@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CartService } from '../../providers/cart-service';
 import { IonicService } from '../../providers/ionic-service';
 import { NavController, NavParams, AlertController} from 'ionic-angular';
 import { LoadingController,Loading } from 'ionic-angular';
@@ -15,15 +14,11 @@ export class Page2 {
   icons: string[];
   items: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public ionicService: IonicService,public alertCtrl: AlertController,public loadingCtrl: LoadingController, public cartService: CartService,public http: Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public ionicService: IonicService,public alertCtrl: AlertController,public loadingCtrl: LoadingController, public http: Http) {
     this.presentLoading();
     this.selectedItem = navParams.get('Name');
     this.getData ();
   }
-
-  placeOrder (item) {
-    this.cartService.placeItemInCart (item);
-  };
 
   presentLoading() {
     this.loading = this.loadingCtrl.create({
